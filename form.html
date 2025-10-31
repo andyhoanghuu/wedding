@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Gửi Đến Google Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], 
+        input[type="email"], 
+        textarea, 
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            margin: 10px 0;
+        }
+        .radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+        .submit-btn {
+            background-color: #4285f4;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #3367d6;
+        }
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>📋 Gửi Thông Tin Đến Google Form</h2>
+        
+        <form id="myForm">
+            <div class="form-group">
+                <label for="name">👤 Tên gợi nhớ:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label>🎉 Bạn có tham dự không?</label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="join" value="1" required>
+                    <label for="yes">Có chứ! Chắc chắn rồi!</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="no" name="join" value="0" required>
+                    <label for="no">Tiếc quá, hôm đấy mình không sắp xếp được, thông cảm nha!</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="number">🪑 Nếu tham dự thì bạn muốn dùng mấy chỗ ngồi?</label>
+                <select id="number" name="number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">🚀 Gửi Thông Tin</button>
+        </form>
+        
+        <div id="successMessage" class="success-message">
+            ✅ Đã gửi thành công! Cảm ơn bạn đã phản hồi.
+        </div>
+        
+        <div id="errorMessage" class="error-message">
+            ❌ Có lỗi xảy ra. Vui lòng thử lại.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Lấy giá trị radio button được chọn
+            const joinRadio = document.querySelector('input[name="join"]:checked');
+            if (!joinRadio) {
+                alert('Vui lòng chọn có tham dự hay không!');
+                return;
+            }
+            
+            const FORM_ID = '1FAIpQLSfi3bl9qBPQynX_iGlBIK0YQ_z8Pb2lrw0fD1JjjjF-iDwQrw';
+            const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
+            
+            const formData = new FormData();
+            formData.append('entry.559352220', document.getElementById('name').value);
+            formData.append('entry.877086558', joinRadio.value); // ✅ Đã sửa
+            formData.append('entry.924523986', document.getElementById('number').value);
+            
+            // Debug: In ra console để kiểm tra
+            console.log('Name:', document.getElementById('name').value);
+            console.log('Join:', joinRadio.value);
+            console.log('Number:', document.getElementById('number').value);
+            
+            fetch(GOOGLE_FORM_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'none';
+                document.getElementById('myForm').reset();
+                
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            })
+            .catch(() => {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
