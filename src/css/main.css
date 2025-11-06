@@ -4040,43 +4040,6 @@ a:where(.css-vorumu)[disabled] {
     background-clip: border-box;
 }
 
-.countdown.jsx-3272123691 {
-    width: 100%;
-    margin: 0px auto;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    gap: var(--spacing);
-    background-color: transparent !important;
-}
-
-.countdown.jsx-3272123691 > div.jsx-3272123691, .countdown.jsx-3272123691 {
-    height: 100%;
-    display: flex;
-}
-
-.countdown.jsx-3272123691 > div.jsx-3272123691 {
-    width: 25%;
-    border-radius: 4px;
-    flex-direction: column;
-}
-
-.countdown.jsx-3272123691 > div.jsx-3272123691 {
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-}
-
-.countdown.vertical.jsx-3272123691 {
-    flex-direction: column;
-}
-
-.countdown.vertical.jsx-3272123691 > div.jsx-3272123691 {
-    width: 100% !important;
-    flex-direction: row !important;
-    gap: 5px !important;
-}
-
 .text-box-component.jsx-17337941 {
     height: auto !important;
     position: relative;
