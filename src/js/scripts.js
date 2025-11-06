@@ -105,3 +105,35 @@ document.addEventListener('DOMContentLoaded', function() {
         iconCancel.style.display = 'block';
     });
 });
+
+// Lấy các element
+const popup = document.getElementById("popup");
+const openBtn = document.getElementById("openPopup");
+const closeBtn = document.getElementById("closePopup");
+const overlay = document.getElementById("popupOverlay");
+
+// Mở popup
+function openPopup() {
+    popup.classList.add("show");
+    document.body.style.overflow = "hidden"; // Ngăn cuộn trang khi popup mở
+}
+
+// Đóng popup
+function closePopup() {
+    popup.classList.remove("show");
+    document.body.style.overflow = "auto"; // Cho phép cuộn trang lại
+}
+
+// Event listeners
+openBtn.addEventListener("click", openPopup);
+closeBtn.addEventListener("click", closePopup);
+
+// Đóng popup khi click vào overlay
+overlay.addEventListener("click", closePopup);
+
+// Đóng popup khi nhấn ESC
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && popup.classList.contains("show")) {
+        closePopup();
+    }
+});
