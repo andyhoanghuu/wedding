@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'The Hamstter';
+  src: url('the-hamstter.woff2') format('woff2'),
+       url('the-hamstter.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

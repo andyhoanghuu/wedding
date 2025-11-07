@@ -91,9 +91,15 @@
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Popup container */
@@ -4090,4 +4096,114 @@ a:where(.css-vorumu)[disabled] {
 
 #main-scroll-container #root-page-container:hover::before {
     background: rgba(0, 0, 0, 0.3);
+}
+
+#BUTTON2 {
+    width: 129.032px;
+    height: 25px;
+    top: 550.929px;
+    left: 146.71px;
+}
+
+
+#BUTTON2 > .ladi-button {
+    border-radius: 100px;
+}
+
+.ladi-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ladi-button > .ladi-button-headline, .ladi-button > .ladi-button-shape {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: table;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#BUTTON_SHAPE2.ladi-animation > .ladi-shape {
+    animation-name: pulse;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#BUTTON_SHAPE2 > .ladi-shape {
+    width: 18.9021px;
+    height: 20px;
+    left: 10px;
+}
+
+.ladi-button > .ladi-button-shape .ladi-shape {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+#BUTTON_SHAPE2 svg:last-child {
+    fill: rgb(255, 255, 255);
+}
+
+.ladi-button > .ladi-button-headline, .ladi-button > .ladi-button-shape {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: table;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#BUTTON_TEXT2 > .ladi-headline {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.ladi-button > .ladi-button-headline .ladi-headline {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ladi-headline {
+    width: 100%;
+    display: inline-block;
+    word-break: break-word;
+    background-size: cover;
+    background-position: center center;
+}
+
+#BUTTON2 > .ladi-button > .ladi-button-background {
+    background-color: rgb(96, 2, 2);
+}
+
+.ladi-button .ladi-button-background {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    transition: inherit;
+}
+
+.ladi-shape {
+    position: absolute;
+}
+
+.ladi-element {
+    position: absolute;
+}
+
+div#BUTTON_TEXT2 {
+    position: absolute;
 }
