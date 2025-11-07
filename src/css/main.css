@@ -4126,3 +4126,41 @@ a:where(.css-vorumu)[disabled] {
     font-weight: bold;
 }
 
+.map-box {
+    height: auto;
+    width: 100%;
+    min-width: 20px;
+    color: rgb(145, 54, 54);
+    font-size: 14px;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+    font-family: Quicksand;
+    text-align: center;
+    line-height: 1.48;
+    letter-spacing: 0px;
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.form-box {
+    padding: 10px 35px;
+    color: rgb(180, 63, 63);
+    font-size: 16px;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+    font-weight: bold;
+    font-family: Quicksand;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 0px;
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
