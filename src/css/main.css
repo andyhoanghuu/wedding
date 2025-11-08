@@ -330,6 +330,51 @@
     }
 }
 
+.crazy-shake-2 {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transform-origin: center;
+  animation: crazy-shake-2 2.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Hiệu ứng lắc mạnh trong 35% đầu chu kỳ, sau đó nghỉ */
+@keyframes crazy-shake-2 {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  5% {
+    transform: translate(-10px, 5px) rotate(-8deg);
+  }
+  10% {
+    transform: translate(8px, -6px) rotate(10deg);
+  }
+  15% {
+    transform: translate(-12px, 4px) rotate(-12deg);
+  }
+  20% {
+    transform: translate(10px, -4px) rotate(10deg);
+  }
+  25% {
+    transform: translate(-8px, 3px) rotate(-8deg);
+  }
+  30% {
+    transform: translate(6px, -2px) rotate(6deg);
+  }
+  35% {
+    transform: translate(0, 0) rotate(0);
+  }
+  /* nghỉ hoàn toàn */
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
 #audio-control-wrapper.jsx-3522513885 {
     position: absolute;
     right: 10px;
