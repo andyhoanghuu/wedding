@@ -131,11 +131,11 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%) translateY(100%); /* Ẩn ở dưới */
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 408px;
     background-color: white;
     border-radius: 15px 15px 0 0;
-    padding: 30px 20px;
+    padding: 30px 15px;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -189,7 +189,7 @@
     .popup-content {
         width: 100%;
         border-radius: 15px 15px 0 0;
-        padding: 25px 20px;
+        padding: 30px 20px;
     }
 }
 
@@ -4208,4 +4208,127 @@ a:where(.css-vorumu)[disabled] {
 
 .form-link:hover {
     text-decoration: underline;
+}
+
+.hand-point {
+    height: 50px;
+    width: 58px;
+    position: absolute;
+    top: 132px;
+    left: 190px;
+    z-index: 9999999999;
+    background-size: cover;
+    animation-name: pulse;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.2) rotate(1deg);
+                }
+
+                100% {
+                    transform: scale(1) rotate(-1deg);
+                }
+            }
+
+.open-popup-btn {
+    width: 180px;
+}
+
+.qrcode-boxes {
+  display: flex; /* Makes the container a flex container */
+  justify-content: space-around; /* Distributes space around the items */
+  align-items: center; /* Vertically centers the items */
+}
+
+.qrcode-box {
+    width: 50%;
+    margin: 5px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: rgb(96, 2, 2);
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+    font-family: "Maven Pro", sans-serif !important;
+    font-size: 12px;
+    border-radius: 100px;
+    padding: 3px 10px;
+    margin-top: 5px;
+}
+.download-btn:hover {
+    color: rgb(255, 255, 255);
+}
+
+.popup-title {
+    height: auto;
+    width: 100%;
+    min-width: 20px;
+    color: rgb(180, 63, 63);
+    font-size: 30px;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+    font-weight: bold;
+    font-family: Summerfun;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 0px;
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.popup-desc {
+    height: auto;
+    width: 100%;
+    min-width: 20px;
+    color: rgb(180, 63, 63);
+    font-size: 18px;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+    font-weight: bold;
+    font-family: Signora;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 0px;
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.qr-title {
+    height: auto;
+    width: 100%;
+    min-width: 20px;
+    color: rgb(180, 63, 63);
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+    font-weight: bold;
+    font-family: Signora;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-style: normal;
+    overflow: hidden;
+    word-break: break-word;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.qr-code img {
+    margin-bottom: 15px;
 }
