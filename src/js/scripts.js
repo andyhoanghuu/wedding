@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', function () {
+// Khởi tạo với nhiều tùy chọn
+    sal({
+        threshold: 0.5,
+        once: true,
+        selector: '[data-sal]',
+        animateClassName: 'sal-animate',
+        disabledClassName: 'sal-disabled',
+        rootMargin: '0% 50%',
+        enterEventName: 'sal:in',
+        exitEventName: 'sal:out'
+    });
+
+// Lắng nghe events
+    document.addEventListener('sal:in', ({detail}) => {
+        console.log('Element entered:', detail.target);
+    });
+
+    document.addEventListener('sal:out', ({detail}) => {
+        console.log('Element exited:', detail.target);
+    });
+});
 window.addEventListener('DOMContentLoaded', function () {
     const preloaderHeart = document.querySelector('.preloader-heart');
     const preloaderBack = document.querySelector('.preloader-back');
@@ -8,19 +30,6 @@ window.addEventListener('DOMContentLoaded', function () {
         preloaderBack.style.display = 'none';
     }
 });
-
-// Sal.js initialization
-window.addEventListener('DOMContentLoaded', function () {
-    sal({
-        threshold: 0.5,
-        once: true,
-        selector: '[data-sal]',
-        animateClassName: 'sal-animate',
-        disabledClassName: 'sal-disabled',
-        rootMargin: '0% 50%'
-    });
-});
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const audioElement = document.querySelector('audio');
