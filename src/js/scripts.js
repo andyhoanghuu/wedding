@@ -1,31 +1,31 @@
 // Giải pháp đơn giản và hiệu quả
-(function() {
-    let preloaderRemoved = false;
-
-    function removePreloader() {
-        if (preloaderRemoved) return;
-
-        const elements = ['.preloader-heart', '.preloader-back'];
-        elements.forEach(selector => {
-            const element = document.querySelector(selector);
-            if (element) {
-                element.style.display = 'none';
-            }
-        });
-
-        preloaderRemoved = true;
-        console.log('Preloader removed');
-    }
-
-    // Sử dụng nhiều event để đảm bảo
-    window.addEventListener('load', removePreloader);
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(removePreloader, 2000); // 2s dự phòng
-    });
-
-    // Timeout cuối cùng
-    setTimeout(removePreloader, 4000);
-})();
+// (function() {
+//     let preloaderRemoved = false;
+//
+//     function removePreloader() {
+//         if (preloaderRemoved) return;
+//
+//         const elements = ['.preloader-heart', '.preloader-back'];
+//         elements.forEach(selector => {
+//             const element = document.querySelector(selector);
+//             if (element) {
+//                 element.style.display = 'none';
+//             }
+//         });
+//
+//         preloaderRemoved = true;
+//         console.log('Preloader removed');
+//     }
+//
+//     // Sử dụng nhiều event để đảm bảo
+//     window.addEventListener('load', removePreloader);
+//     document.addEventListener('DOMContentLoaded', function() {
+//         setTimeout(removePreloader, 2000); // 2s dự phòng
+//     });
+//
+//     // Timeout cuối cùng
+//     setTimeout(removePreloader, 4000);
+// })();
 
 // Sal.js initialization
 document.addEventListener('DOMContentLoaded', function() {
