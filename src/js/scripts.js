@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 // Sal.js initialization
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
     sal({
         threshold: 0.5,
         once: true,
