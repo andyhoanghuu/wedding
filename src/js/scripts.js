@@ -1,5 +1,34 @@
+// Giải pháp đơn giản và hiệu quả
+(function() {
+    let preloaderRemoved = false;
+
+    function removePreloader() {
+        if (preloaderRemoved) return;
+
+        const elements = ['.preloader-heart', '.preloader-back'];
+        elements.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.style.display = 'none';
+            }
+        });
+
+        preloaderRemoved = true;
+        console.log('Preloader removed');
+    }
+
+    // Sử dụng nhiều event để đảm bảo
+    window.addEventListener('load', removePreloader);
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(removePreloader, 2000); // 2s dự phòng
+    });
+
+    // Timeout cuối cùng
+    setTimeout(removePreloader, 4000);
+})();
+
+// Sal.js initialization
 document.addEventListener('DOMContentLoaded', function() {
-    // Khởi tạo với nhiều tùy chọn
     sal({
         threshold: 0.5,
         once: true,
@@ -10,25 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         enterEventName: 'sal:in',
         exitEventName: 'sal:out'
     });
-
-    // Lắng nghe events
-    document.addEventListener('sal:in', ({ detail }) => {
-        console.log('Element entered:', detail.target);
-    });
-
-    document.addEventListener('sal:out', ({ detail }) => {
-        console.log('Element exited:', detail.target);
-    });
-});
-window.addEventListener('DOMContentLoaded', function() {
-  const preloaderHeart = document.querySelector('.preloader-heart');
-  const preloaderBack = document.querySelector('.preloader-back');
-  if (preloaderHeart) {
-    preloaderHeart.style.display = 'none';
-  }
-  if (preloaderBack) {
-    preloaderBack.style.display = 'none';
-  }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
