@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         disabledClassName: 'sal-disabled',
         rootMargin: '0% 50%',
         enterEventName: 'sal:in',
-        exitEventName: 'sal:out',
-        disable: function() {
-            // Disable trên mobile nếu cần
-            return window.innerWidth < 768;
-        }
+        exitEventName: 'sal:out'
     });
 
     // Lắng nghe events
