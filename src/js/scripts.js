@@ -1,34 +1,16 @@
-// Giải pháp đơn giản và hiệu quả
-// (function() {
-//     let preloaderRemoved = false;
-//
-//     function removePreloader() {
-//         if (preloaderRemoved) return;
-//
-//         const elements = ['.preloader-heart', '.preloader-back'];
-//         elements.forEach(selector => {
-//             const element = document.querySelector(selector);
-//             if (element) {
-//                 element.style.display = 'none';
-//             }
-//         });
-//
-//         preloaderRemoved = true;
-//         console.log('Preloader removed');
-//     }
-//
-//     // Sử dụng nhiều event để đảm bảo
-//     window.addEventListener('load', removePreloader);
-//     document.addEventListener('DOMContentLoaded', function() {
-//         setTimeout(removePreloader, 2000); // 2s dự phòng
-//     });
-//
-//     // Timeout cuối cùng
-//     setTimeout(removePreloader, 4000);
-// })();
+window.addEventListener('DOMContentLoaded', function () {
+    const preloaderHeart = document.querySelector('.preloader-heart');
+    const preloaderBack = document.querySelector('.preloader-back');
+    if (preloaderHeart) {
+        preloaderHeart.style.display = 'none';
+    }
+    if (preloaderBack) {
+        preloaderBack.style.display = 'none';
+    }
+});
 
 // Sal.js initialization
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     sal({
         threshold: 0.5,
         once: true,
@@ -40,7 +22,7 @@ window.addEventListener('load', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const audioElement = document.querySelector('audio');
     const audioToggle = document.querySelector('.audio-toggle');
     const iconCancel = document.querySelector('.icon-cancel');
@@ -90,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Xử lý click vào nút toggle
-    audioToggle.addEventListener('click', function(e) {
+    audioToggle.addEventListener('click', function (e) {
         e.stopPropagation(); // Ngăn event bubbling
 
         if (isPlaying) {
@@ -121,11 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Thêm event listener cho tất cả các loại tương tác
     userInteractionEvents.forEach(eventType => {
-        document.addEventListener(eventType, handleUserInteraction, { once: false });
+        document.addEventListener(eventType, handleUserInteraction, {once: false});
     });
 
     // Xử lý khi audio kết thúc (nếu không loop)
-    audioElement.addEventListener('ended', function() {
+    audioElement.addEventListener('ended', function () {
         isPlaying = false;
         iconCancel.style.display = 'block';
     });
@@ -157,7 +139,7 @@ closeBtn.addEventListener("click", closePopup);
 overlay.addEventListener("click", closePopup);
 
 // Đóng popup khi nhấn ESC
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && popup.classList.contains("show")) {
         closePopup();
     }
