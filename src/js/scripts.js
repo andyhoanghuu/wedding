@@ -1,9 +1,35 @@
-AOS.init({
-    duration: 1000,
-    easing: 'ease-out-cubic',
-    once: true // Chỉ animate 1 lần
-});
+// AOS.init({
+//     duration: 1000,
+//     easing: 'ease-out-cubic',
+//     once: true // Chỉ animate 1 lần
+// });
+// new WOW().init();
+document.addEventListener('DOMContentLoaded', function() {
+    // Khởi tạo với nhiều tùy chọn
+    sal({
+        threshold: 0.5,
+        once: true,
+        selector: '[data-sal]',
+        animateClassName: 'sal-animate',
+        disabledClassName: 'sal-disabled',
+        rootMargin: '0% 50%',
+        enterEventName: 'sal:in',
+        exitEventName: 'sal:out',
+        disable: function() {
+            // Disable trên mobile nếu cần
+            return window.innerWidth < 768;
+        }
+    });
 
+    // Lắng nghe events
+    document.addEventListener('sal:in', ({ detail }) => {
+        console.log('Element entered:', detail.target);
+    });
+
+    document.addEventListener('sal:out', ({ detail }) => {
+        console.log('Element exited:', detail.target);
+    });
+});
 window.addEventListener('load', function() {
   const preloaderHeart = document.querySelector('.preloader-heart');
   const preloaderBack = document.querySelector('.preloader-back');
