@@ -1,9 +1,3 @@
-// AOS.init({
-//     duration: 1000,
-//     easing: 'ease-out-cubic',
-//     once: true // Chỉ animate 1 lần
-// });
-// new WOW().init();
 document.addEventListener('DOMContentLoaded', function() {
     // Khởi tạo với nhiều tùy chọn
     sal({
@@ -26,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Element exited:', detail.target);
     });
 });
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
   const preloaderHeart = document.querySelector('.preloader-heart');
   const preloaderBack = document.querySelector('.preloader-back');
   if (preloaderHeart) {
