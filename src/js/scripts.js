@@ -28,18 +28,17 @@
 // })();
 
 // Sal.js initialization
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     sal({
         threshold: 0.5,
         once: true,
         selector: '[data-sal]',
         animateClassName: 'sal-animate',
         disabledClassName: 'sal-disabled',
-        rootMargin: '0% 50%',
-        enterEventName: 'sal:in',
-        exitEventName: 'sal:out'
+        rootMargin: '0% 50%'
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const audioElement = document.querySelector('audio');

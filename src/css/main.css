@@ -4334,3 +4334,14 @@ a:where(.css-vorumu)[disabled] {
 .qr-code img {
     margin-bottom: 15px;
 }
+
+[data-sal] {
+    will-change: opacity, transform; /* Đảm bảo trình duyệt có thể tối ưu hóa */
+    opacity: 0; /* Khởi tạo opacity */
+    transition: opacity 0.6s, transform 0.6s; /* Thiết lập transition */
+}
+
+[data-sal].sal-animate {
+    opacity: 1; /* Đặt opacity khi có animation */
+    transform: translateY(0); /* Hoặc dựa trên hiệu ứng của bạn */
+}
